@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Question Game</title>
+</head>
+<body>
+    <div id="game"></div>
+
+
+    <script type="text/javascript">
+
+            var correct = 0;
+            var incorrect = 0; 
+        // 1. Problem: create an object with 10 questions. The object should be structured as follows: q1: ["QUESTION", "ANSWER"] q2: ["QUESTION", "ANSWER"]
+        //1. Solution: 
+        var questions = {
+            Q1 : ["My name is Susan", "false"],
+            Q2 : ["I have 3 beautiful children", "true"],
+            Q3 : ["My husband is great", "true"],
+            Q4 : ["I love to code", "true"],
+            Q5 : ["My favortie color is red", "false"],
+            Q6 : ["I was born in Nebraska", "false"],
+            Q7 : ["I enjoy traveling", "true"],
+            Q8 : ["My favorite sport is basketball", "false"],
+            Q9 : ["I love the Kardashians", "true"],
+            Q10 : ["Making games is fun", "true"] 
+        }
+       
+    
+        //2. Create code that will ask the user questions, one by one. The user must answer by hitting t (for true) or f (for false).
+            for (x in questions) {
+                var userQuest = questions[x]; 
+                for (i=0; i<1; i++){
+                    var userAnsw = prompt(userQuest[0]);     
+                
+                    if (userAnsw === userQuest[1].charAt(0)){
+                        alert("You are correct!");
+                        correct++
+                    }
+                    else {
+                       alert("You are not correct!"); 
+                       incorrect++
+                    }
+                }
+
+                    var html = 
+                        "<p>Number Correct: " + correct + "</p>" +
+                        "<p>Number Incorrect: " + incorrect + "</p>" 
+
+                        document.querySelector("#game").innerHTML = html; 
+            }
+        
+
+        //Check the user's answer against the correct answer, and provide them with an alert telling them if they are right or wrong.
+        //BONUS: Keep track of the user's score.
+        //HINT: Don't worry about having DRY code to start with. Just focus on getting working code first.
+        
+    
+    </script>
+    
+</body>
+</html>
